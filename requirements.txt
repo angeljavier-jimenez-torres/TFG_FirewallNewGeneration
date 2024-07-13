@@ -1,0 +1,9 @@
+# Dependencias de Python necesarias para el proyecto
+numpy
+SeaBorn
+matplotlib
+joblib
+explainerdashboard
+pandas
+pyarrow
+scikit-learn

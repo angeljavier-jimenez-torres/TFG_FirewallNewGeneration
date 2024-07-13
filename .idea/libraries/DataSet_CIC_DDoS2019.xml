@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="DataSet_CIC-DDoS2019">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/DataSet_CIC-DDoS2019/CSV-03-11.zip!/" />
+      <root url="jar://$PROJECT_DIR$/DataSet_CIC-DDoS2019/CSV-01-12.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
