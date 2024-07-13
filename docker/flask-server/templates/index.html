@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Flujo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var socket = io.connect('http://' + document.domain + ':' + location.port);
+            socket.on('new_data', function(data) {
+                var container = document.getElementById('data-container');
+                var newEntry = document.createElement('div');
+                newEntry.innerHTML = '<p><strong>Predicción:</strong> ' + data.prediction + '</p>' +
+                                     '<p><strong>Probabilidad de clase 0:</strong> ' + data.probability_0 + '</p>' +
+                                     '<p><strong>Probabilidad de clase 1:</strong> ' + data.probability_1 + '</p>' +
+                                     '<pre>' + JSON.stringify(data.X_new, null, 2) + '</pre>';
+                container.insertBefore(newEntry, container.firstChild);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Predicción de Flujo</h1>
+    <div id="data-container">
+        <p>Esperando datos...</p>
+    </div>
+</body>
+</html>
